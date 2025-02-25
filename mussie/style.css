@@ -1,0 +1,217 @@
+/*
+PALETA DE CORES
+
+Cereja: #7C1F31
+*/
+
+body {
+   font-family: 'Comfortaa', sans-serif;
+   font-weight: 400; /* Regular */
+}
+
+/* Resetando margens e padding padrão */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* Estilos para o cabeçalho */
+header {
+   background: rgba(0, 0, 0, 0.5);
+   color: white;
+   padding: 1.25rem; /* 20px => 1.25rem */
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-left: 1.25rem;
+   padding-right: 1.25rem;
+   font-weight: 300;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+   backdrop-filter: blur(0.625rem);
+}
+
+/* Estilos para a logo */
+.logo {
+   margin-left: 5rem;
+   font-size: 1.3rem;
+   text-decoration: none;
+   font-weight: 400;
+   color: white;
+}
+
+.logo span {
+   color: #7C1F31;
+}
+
+/* Estilos para o menu de navegação */
+nav ul {
+   margin-right: 2.5rem;
+   list-style-type: none;
+   display: flex;
+}
+
+nav ul li {
+   margin: 0 2.8125rem;
+}
+
+/* opções no hamburguer (menu)*/
+nav ul li a {
+   text-decoration: none;
+   color: white;
+   font-size: 1rem;
+   transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+   color: #7C1F31;
+   text-decoration: underline;
+   transition: color 0.5s ease, text-decoration 0.3s ease;
+}
+
+/* Estilos para o ícone de menu (hamburguer) */
+.menu {
+   display: none; /* Esconde o menu em telas grandes */
+   cursor: pointer;
+}
+
+/* Exibe o ícone de menu apenas em telas pequenas | MUDA ELEMENTOS DENTRO DO MODO MOBILE */ 
+@media (max-width: 768px) {
+   .menu {
+       display: block; /* Exibe o ícone de menu em telas pequenas */
+   }
+
+   nav ul {
+       display: none; /* Esconde a navegação em telas pequenas */
+       flex-direction: column;
+       width: 100%;
+       text-align: center;
+       font-weight: 400; /* Regular */
+   }
+
+   nav ul li {
+       padding: 2.5rem;
+       color: white;
+   }
+
+   /* Mostra o menu quando a classe 'active' for adicionada */
+   nav.active ul {
+       display: flex;
+   }
+
+   nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 2rem;
+      transition: color 0.3s ease;
+   }
+
+   .logo {
+      margin-left: 5rem;
+      font-size: 2.5rem;
+      text-decoration: none;
+      font-weight: 400;
+      color: white;
+   }
+}
+
+/* Ajustando o ícone de menu (hamburguer) */
+.menu i {
+    color: white;
+    font-size: 2.5rem;
+    display: block; /* Exibe o ícone */
+    margin-right: 3rem;
+}
+
+.menu i:hover {
+    color: #7C1F31;
+    transition: color 0.3s ease;
+}
+
+/* Responsividade para telas menores */
+@media(max-width: 990px) {
+   html {
+       font-size: 55.5%;
+   }
+
+   .home {
+       flex-flow: column-reverse;
+       padding: 8rem 0;
+       padding-top: 15rem;
+   }
+}
+
+@media(max-width: 700px) {
+   html {
+       font-size: 50.5%;
+   }
+
+   .home img {
+       height: 35rem;
+       width: 35rem;
+   }
+
+   .home {
+       padding: 8rem 0;
+   }
+
+   section {
+       padding: 1rem;
+   }
+
+   .header {
+       position: relative;
+       padding: 0;
+   }
+
+   .header .logo,
+   .header .menu {
+       padding: 2.1rem;
+   }
+
+   /* Mostrar o ícone do menu */
+   .menu i {
+       display: flex;
+   }
+
+   /* Ajustar o comportamento da navbar quando a classe 'active' for adicionada */
+   .header .navbar.active {
+       display: grid;
+   }
+
+   .header .navbar {
+       position: absolute;
+       top: 7rem;
+       display: none;
+       text-align: center;
+       justify-content: center;
+       background-color: #7C1F31; /* Coloca a cor principal do tema */
+       width: 100%;
+       gap: 2rem;
+       padding: 1rem;
+   }
+
+   .header .navbar a#home {
+       color: white;
+       text-decoration: none;
+   }
+
+   .header .navbar a {
+       width: 100%;
+       padding: 1rem;
+   }
+
+   /* Efeito de hover nos links do menu */
+   .header .navbar a:hover,
+   .header .navbar a#home:hover {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      background-color: white;
+      color: #7C1F31;
+      text-decoration: none;
+   }
+}
