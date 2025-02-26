@@ -2,21 +2,57 @@
 PALETA DE CORES
 
 Cereja: #7C1F31
+
+
+
+FONTES
+400 REGULAR
+700 BOLD
+
 */
+
+
+:root {
+    --main-color: #7c1f31;
+    --bg-color: #1e1e1e
+}
+
 
 body {
    font-family: 'Comfortaa', sans-serif;
-   font-weight: 400; /* Regular */
+   font-weight: 400; /* regular */
+   background-color: var(--bg-color);
 }
 
-/* Resetando margens e padding padrão */
+/* reseta margens e o padding padrão */
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
 
-/* Estilos para o cabeçalho */
+
+html {
+    scroll-behavior: smooth;
+}
+  
+  html::-webkit-scrollbar{
+    width: 0.35rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: var(--bg-color);
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 10px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* CABEÇALHO */
 header {
    background: rgba(0, 0, 0, 0.5);
    color: white;
@@ -35,7 +71,7 @@ header {
    backdrop-filter: blur(0.625rem);
 }
 
-/* Estilos para a logo */
+/* estilos para a logo */
 .logo {
    margin-left: 5rem;
    font-size: 1.3rem;
@@ -45,10 +81,10 @@ header {
 }
 
 .logo span {
-   color: #7C1F31;
+   color: var(--main-color);
 }
 
-/* Estilos para o menu de navegação */
+/* estilos para o menu de navegação */
 nav ul {
    margin-right: 2.5rem;
    list-style-type: none;
@@ -68,29 +104,29 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-   color: #7C1F31;
+   color: var(--main-color);
    text-decoration: underline;
    transition: color 0.5s ease, text-decoration 0.3s ease;
 }
 
-/* Estilos para o ícone de menu (hamburguer) */
+/* estilos para o ícone de menu (hamburguer) */
 .menu {
-   display: none; /* Esconde o menu em telas grandes */
+   display: none; /* esconde o menu em telas grandes */
    cursor: pointer;
 }
 
-/* Exibe o ícone de menu apenas em telas pequenas | MUDA ELEMENTOS DENTRO DO MODO MOBILE */ 
+/* exibe o ícone de menu apenas em telas pequenas | MUDA ELEMENTOS DENTRO DO MODO MOBILE */ 
 @media (max-width: 768px) {
    .menu {
-       display: block; /* Exibe o ícone de menu em telas pequenas */
+       display: block; /* exibe o ícone de menu em telas pequenas */
    }
 
    nav ul {
-       display: none; /* Esconde a navegação em telas pequenas */
+       display: none; /* esconde a navegação em telas pequenas */
        flex-direction: column;
        width: 100%;
        text-align: center;
-       font-weight: 400; /* Regular */
+       font-weight: 400; /* regular */
    }
 
    nav ul li {
@@ -98,7 +134,7 @@ nav ul li a:hover {
        color: white;
    }
 
-   /* Mostra o menu quando a classe 'active' for adicionada */
+   /* mostra o menu quando a classe 'active' for adicionada */
    nav.active ul {
        display: flex;
    }
@@ -107,7 +143,7 @@ nav ul li a:hover {
       text-decoration: none;
       color: white;
       font-size: 2rem;
-      transition: color 0.3s ease;
+      transition: none;
    }
 
    .logo {
@@ -117,9 +153,10 @@ nav ul li a:hover {
       font-weight: 400;
       color: white;
    }
+
 }
 
-/* Ajustando o ícone de menu (hamburguer) */
+/* ícone de menu (hamburguer) */
 .menu i {
     color: white;
     font-size: 2.5rem;
@@ -128,11 +165,11 @@ nav ul li a:hover {
 }
 
 .menu i:hover {
-    color: #7C1F31;
-    transition: color 0.3s ease;
+    color: var(--main-color);
+    transition: none;
 }
 
-/* Responsividade para telas menores */
+/* responsividade para telas menores */
 @media(max-width: 990px) {
    html {
        font-size: 55.5%;
@@ -150,11 +187,6 @@ nav ul li a:hover {
        font-size: 50.5%;
    }
 
-   .home img {
-       height: 35rem;
-       width: 35rem;
-   }
-
    .home {
        padding: 8rem 0;
    }
@@ -164,7 +196,7 @@ nav ul li a:hover {
    }
 
    .header {
-       position: relative;
+       position: fixed;
        padding: 0;
    }
 
@@ -173,12 +205,12 @@ nav ul li a:hover {
        padding: 2.1rem;
    }
 
-   /* Mostrar o ícone do menu */
+   /* mostra o ícone do menu */
    .menu i {
        display: flex;
    }
 
-   /* Ajustar o comportamento da navbar quando a classe 'active' for adicionada */
+   /* ajusta o comportamento da navbar quando 'hamburguer'(menu) quando for clicado */
    .header .navbar.active {
        display: grid;
    }
@@ -189,7 +221,7 @@ nav ul li a:hover {
        display: none;
        text-align: center;
        justify-content: center;
-       background-color: #7C1F31; /* Coloca a cor principal do tema */
+       background-color: var(--main-color);
        width: 100%;
        gap: 2rem;
        padding: 1rem;
@@ -205,13 +237,272 @@ nav ul li a:hover {
        padding: 1rem;
    }
 
-   /* Efeito de hover nos links do menu */
+   /* adciona efeito de hover nos links do menu */
    .header .navbar a:hover,
    .header .navbar a#home:hover {
-      padding-left: 5rem;
-      padding-right: 5rem;
-      background-color: white;
-      color: #7C1F31;
-      text-decoration: none;
+        padding-inline: 15rem;
+        background-color: white;
+        color: var(--main-color);
+        text-decoration: none;
+        transition : none;
    }
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* SECTION 1 - HOME */
+
+#home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('imgs/plano_de_fundo.png');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+  }
+  
+  .wallpaper_home {
+    display: none;
+  }
+  
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* SECTION 2 - NOVIDADES */
+
+/* titulo da section (talvez não precise) */
+  .projetos{
+    min-height: 100vh;
+    background-color: var(--second-bg-color);
+    padding: 5rem 5%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.projetos .heading{
+    color: var(--text-color);
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+/* ------------------- Slides ------------------- */
+.slider{
+	position: relative;
+	width: 100%;
+	background: var(--second-main-color);
+}
+
+.myslide{
+	height: 655px;
+	display: none;
+	overflow: hidden;
+}
+
+.prev, .next{
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	font-size: 50px;
+	padding: 15px;
+	cursor: pointer;
+	color: #fff;
+	transition: 0.1s;
+	user-select: none;
+    z-index: 2;
+}
+
+.prev:hover, .next:hover{
+	color: var(--main-color);
+}
+
+.next{
+	right: 0;
+}
+
+.dotsbox{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 20px;
+	cursor: pointer;
+}
+
+.dot{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+
+.active, .dot:hover{
+	border-color: var(--main-color);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+
+.txt{
+	position: absolute;
+	color: #fff;
+	letter-spacing: 2px;
+	line-height: 35px;
+	top: 40%;
+	left: 15%;
+	-webkit-animation-name: posi;
+  	-webkit-animation-duration: 2s;
+  	animation-name: posi;
+  	animation-duration: 2s;
+	z-index: 1;
+}
+
+@-webkit-keyframes posi {
+  from {left: 25%;}
+  to {left: 15%;}
+}
+
+
+@keyframes posi {
+  from {left: 25%;}
+  to {left: 15%;}
+}
+
+.txt h1 {
+	color: var(--text-color);
+	font-size: 4.92rem;
+	margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.txt a {
+	color: var(--text-color);
+	font-size: 4.92rem;
+	margin-bottom: 20px;
+}
+
+.txt h1:hover {
+	color: var(--main-color);
+	font-size: 4.92rem;
+	margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.txt a:hover {
+	color: var(--main-color);
+	font-size: 4.92rem;
+	margin-bottom: 20px;
+}
+
+.txt p {
+	font-weight: bold;
+	font-size: 1.96rem;
+    content: auto;
+    margin-right: 10%;
+}
+
+
+
+img-slide{
+	transform: scale(1.5, 1.5);
+	-webkit-animation-name: zoomin;
+  	-webkit-animation-duration: 40s;
+  	animation-name: zoomin;
+  	animation-duration: 40s;
+
+}
+@-webkit-keyframes zoomin {
+  from {transform: scale(1, 1);}
+  to {transform: scale(1.5, 1.5);}
+  
+}
+
+
+@keyframes zoomin {
+  from {transform: scale(1, 1);}
+  to {transform: scale(1.5, 1.5);}
+}
+
+
+@media screen and (max-width: 800px){
+	.myslide{
+		height: auto;
+        width: auto;
+	}
+
+	.txt{
+		letter-spacing: 2px;
+		line-height: 25px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-animation-name: posi2;
+		-webkit-animation-duration: 2s;
+		animation-name: posi2;
+		animation-duration: 2s;
+	}
+
+	@-webkit-keyframes posi2 {
+	  from {top: 35%;}
+	  to {top: 50%;}
+	}
+
+
+	@keyframes posi2 {
+	  from {top: 35%;}
+	  to {top: 50%;}
+	}
+
+	.txt h1{
+		font-size: 40px;
+	}
+	.txt p{
+		font-size: 13px;
+	}
+
+}
+
+
+@media screen and (max-width: 520px){
+	.txt h1{
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	.sign{
+		margin-right: 20px;
+	}
+	.sign a{
+		font-size: 12px;
+	}
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* SECTION clientes(?) */
+
+#clientes {
+    background-color: white;
 }
