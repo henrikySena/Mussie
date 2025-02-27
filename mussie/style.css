@@ -6,6 +6,7 @@ Cereja: #7C1F31
 
 
 FONTES
+300 LIGHT
 400 REGULAR
 700 BOLD
 
@@ -13,7 +14,9 @@ FONTES
 
 
 :root {
-    --main-color: #7c1f31;
+    --main-color: #7c1f31; 
+    --second-main-color: #a73c51;
+
     --bg-color: #1e1e1e
 }
 
@@ -79,9 +82,9 @@ header {
    font-weight: 400;
    color: white;
 }
-
 .logo span {
-   color: var(--main-color);
+   color: var(--second-main-color);
+   font-weight: 700;
 }
 
 /* estilos para o menu de navegação */
@@ -104,7 +107,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-   color: var(--main-color);
+   color: var(--second-main-color);
    text-decoration: underline;
    transition: color 0.5s ease, text-decoration 0.3s ease;
 }
@@ -294,7 +297,6 @@ nav ul li a:hover {
 .slider{
 	position: relative;
 	width: 100%;
-	background: var(--second-main-color);
 }
 
 .myslide{
@@ -501,8 +503,144 @@ img-slide{
 /* -------------------------------------------------------------------------------------------------- */
 
 
-/* SECTION clientes(?) */
+/* SECTION clientes (relatos) */
 
 #clientes {
     background-color: white;
+}
+
+.relatos {
+    display: flex;
+    justify-content: space-around;
+}
+
+.relato-item {
+    text-align: center;
+    width: 30%;
+}
+
+.relato-item img {
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20rem;
+}
+
+.relato-texto {
+    font-size: 1.2rem;
+    color: var(--main-color);
+    font-weight: 400;
+    margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 800px){
+	.relato-texto {
+        font-size: 1.8rem;
+        color: var(--main-color);
+        font-weight: 400;
+    }
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* SECTION sobre nós */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    background-color: var(--main-color);  /* Cor de fundo similar à imagem */
+    padding: auto;
+}
+
+.text-box {
+    background-color: var(--main-color);
+    color: white;
+    padding: auto; /* Ajuste no padding */
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+    height: 100%; /* Garante que o elemento ocupe toda a altura da célula */
+    font-size: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    line-height: 2.5;
+}
+
+
+.image-box img {
+    width: 100%;
+    height:auto;
+    object-fit: cover;
+    display: block;
+}
+
+.large {
+    grid-column: span 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .text-box {
+        background-color: var(--main-color);
+        color: white;
+        padding: auto; /* Ajuste no padding */
+        display: flex;
+        align-items: center; /* Alinha verticalmente */
+        justify-content: center; /* Alinha horizontalmente */
+        height: 100%; /* Garante que o elemento ocupe toda a altura da célula */
+        font-size: 1.5rem;
+        margin-left: 10%;
+        margin-right: 10%;
+        line-height: 2.5;
+        margin-bottom: 10rem;
+    }
+
+    .image-box img {
+        width: 100%;
+        height:auto;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* SECTION planos(? talvez algo que leve para cadastrar) */
+
+#planos {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('imgs/plano_de_fundo1.png');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+  }
+  
+  .wallpaper_home {
+    display: none;
+  }
+
+
+
+  /* -------------------------------------------------------------------------------------------------- */
+
+
+/* FOOTER */
+
+#footer {
+    background-color: black;
+    padding: 10%;
 }
