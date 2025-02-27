@@ -1,7 +1,8 @@
 /*
 PALETA DE CORES
 
-Cereja: #7C1F31
+Cereja: #7c1f31
+Lua nova: #1e1e1e 
 
 
 
@@ -524,7 +525,7 @@ img-slide{
     margin-bottom: 4rem;
     width: 90%;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/ /* eu prefiro sem */
     gap: 20rem;
 }
 
@@ -533,6 +534,7 @@ img-slide{
     color: var(--main-color);
     font-weight: 400;
     margin-bottom: 5rem;
+    line-height: 2;
 }
 
 @media screen and (max-width: 800px){
@@ -548,22 +550,23 @@ img-slide{
 
 
 /* SECTION sobre nós */
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    background-color: var(--main-color);  /* Cor de fundo similar à imagem */
+    background-color: var(--main-color);
     padding: auto;
 }
 
 .text-box {
     background-color: var(--main-color);
     color: white;
-    padding: auto; /* Ajuste no padding */
+    padding: auto;
     display: flex;
-    align-items: center; /* Alinha verticalmente */
-    justify-content: center; /* Alinha horizontalmente */
-    height: 100%; /* Garante que o elemento ocupe toda a altura da célula */
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     font-size: 1rem;
     margin-left: 20%;
     margin-right: 20%;
@@ -578,29 +581,36 @@ img-slide{
     display: block;
 }
 
-.large {
-    grid-column: span 0;
-}
-
-/* Responsividade */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
     }
+
+    /* ordena as imagens corretamente */
+    .text-box:nth-child(1) { order: 1; }
+    .image-box:nth-child(2) { order: 2; }
+    .image-box:nth-child(3) { order: 4; }
+    .text-box:nth-child(4) { order: 3; }
+    .text-box:nth-child(5) { order: 5; }
+    .image-box:nth-child(6) { order: 6; }
+
 
     .text-box {
         background-color: var(--main-color);
         color: white;
-        padding: auto; /* Ajuste no padding */
+        padding: auto;
         display: flex;
-        align-items: center; /* Alinha verticalmente */
-        justify-content: center; /* Alinha horizontalmente */
-        height: 100%; /* Garante que o elemento ocupe toda a altura da célula */
+        align-items: center;
+        justify-content: center;
+        height: 100%;
         font-size: 1.5rem;
         margin-left: 10%;
         margin-right: 10%;
         line-height: 2.5;
-        margin-bottom: 10rem;
+        margin-top: 5rem;
+        margin-bottom:5rem;
+        
     }
 
     .image-box img {
@@ -608,7 +618,6 @@ img-slide{
         height:auto;
         object-fit: cover;
         display: block;
-        margin-bottom: 2rem;
     }
 }
 
@@ -617,7 +626,7 @@ img-slide{
 /* -------------------------------------------------------------------------------------------------- */
 
 
-/* SECTION planos(? talvez algo que leve para cadastrar) */
+/* SECTION planos(talvez algo que leve para cadastrar?) */
 
 #planos {
     position: relative;
@@ -635,7 +644,7 @@ img-slide{
 
 
 
-  /* -------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------- */
 
 
 /* FOOTER */
