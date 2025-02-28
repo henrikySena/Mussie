@@ -715,21 +715,141 @@ img-slide{
 
 /* SECTION planos(talvez algo que leve para cadastrar?) */
 
-#planos {
+#convite {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('imgs/plano_de_fundo1.png');
+    background-image: url('imgs/plano_de_fundo2.png');
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
-  }
+}
   
-  .wallpaper_home {
+.wallpaper_home {
     display: none;
-  }
+}
 
 
+#convite {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente (se necessário) */
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.convite_icone img {
+    display: block;;
+    height: auto;
+}
+
+.convite_txt {
+    font-size: 1.2rem;
+    color: white;
+    width: 60rem;
+    height: 13rem;
+    text-align: center;
+    padding: 15px;
+    border: 0.15rem solid white;
+    border-radius: 50px;
+    margin: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(5px);
+    line-height: 2.5;
+}
+
+.convite_txt p {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+
+.convite_btn {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    width: 25rem;
+    height: 4rem;
+    margin-top: 2rem;
+    text-align: center;
+    padding: 15px;
+    border: 0.15rem solid white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(5px);
+}
+
+.convite_btn:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+@media (max-width: 768px) {
+    .convite_icone img {
+        display: block;;
+        height: auto;
+    }
+    
+    .convite_txt {
+        font-size: 2.3rem;
+        color: white;
+        width: 60rem;
+        height: 35rem;
+        text-align: center;
+        padding: 15px;
+        border: 0.15rem solid white;
+        border-radius: 25px;
+        margin: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(5px);
+        line-height: 2.5;
+    }
+    
+    .convite_txt p {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    
+    
+    .convite_btn {
+        font-family: 'Comfortaa', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: white;
+        width: 30rem;
+        height: 7rem;
+        margin-top: 2rem;
+        text-align: center;
+        padding: 15px;
+        border: 0.15rem solid white;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(5px);
+    }
+    
+    .convite_btn:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+}
 
 /* -------------------------------------------------------------------------------------------------- */
 
@@ -739,4 +859,74 @@ img-slide{
 #footer {
     background-color: black;
     padding: 10%;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+
+.footer_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer_container div {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer_container h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.footer_container p, .footer_container ul {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer_links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer_links ul li {
+    margin: 5px 0;
+}
+
+.footer_links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer_links ul li a:hover {
+    color: #ff6b6b;
+}
+
+.footer_social .social_icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer_social .social_icons img {
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+}
+
+.footer_social .social_icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer_bottom {
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+    font-size: 0.9rem;
 }
