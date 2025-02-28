@@ -66,3 +66,54 @@ function slidefun(n) {
 	myslide[counter - 1].style.display = "block";
 	dot[counter - 1].className += " active";
 }
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.metrica h2');
+    
+    const countUp = (element) => {
+        const target = +element.getAttribute('data-target');
+        let current = 0;
+        
+        // Aumento da velocidade: aumentando o incremento
+        const increment = target / 100; // 100 passos para uma contagem mais rápida
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                // Se o número for 40 ou 98, adiciona o símbolo de porcentagem durante a contagem
+                if (target === 40 || target === 98) {
+                    element.innerText = `${Math.ceil(current)}%`;
+                } else {
+                    element.innerText = Math.ceil(current);
+                }
+                requestAnimationFrame(updateCounter);
+            } else {
+                // Garante que o número final tenha o símbolo de porcentagem
+                if (target === 40 || target === 98) {
+                    element.innerText = `${target}%`;
+                } else {
+                    element.innerText = target;
+                }
+            }
+        };
+        
+        updateCounter();
+    };
+    
+    // Mostrar os números ao rolar até a seção
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                countUp(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+});
