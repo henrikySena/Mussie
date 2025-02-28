@@ -771,8 +771,8 @@ img-slide{
 
 .convite_btn {
     font-family: 'Comfortaa', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: white;
     width: 25rem;
     height: 4rem;
@@ -823,12 +823,10 @@ img-slide{
         margin-right: 10%;
     }
     
-    
-    
     .convite_btn {
         font-family: 'Comfortaa', sans-serif;
-        font-size: 2.5rem;
-        font-weight: 400;
+        font-size: 2.3rem;
+        font-weight: 700;
         color: white;
         width: 30rem;
         height: 7rem;
@@ -869,33 +867,30 @@ img-slide{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 75rem;
     margin: auto;
 }
 
 .footer_container div {
     flex: 1;
-    min-width: 250px;
-    margin: 10px;
+    min-width: 15.625rem;
+    margin: 0.625rem;
 }
 
 .footer_container h3 {
+    color: var(--main-color);
     font-size: 1.3rem;
-    margin-bottom: 15px;
+    margin-bottom: 3rem;
 }
 
 .footer_container p, .footer_container ul {
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 3rem;
 }
 
 .footer_links ul {
     list-style: none;
     padding: 0;
-}
-
-.footer_links ul li {
-    margin: 5px 0;
 }
 
 .footer_links ul li a {
@@ -905,18 +900,29 @@ img-slide{
 }
 
 .footer_links ul li a:hover {
-    color: #ff6b6b;
+    color: var(--main-color);
 }
 
 .footer_social .social_icons {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer_social .social_icons a i {
+    font-size: 1.875rem;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer_social .social_icons a:hover i {
+    color: var(--main-color);
 }
 
 .footer_social .social_icons img {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
     transition: 0.3s;
 }
 
@@ -925,8 +931,66 @@ img-slide{
 }
 
 .footer_bottom {
-    margin-top: 20px;
-    border-top: 1px solid #555;
-    padding-top: 10px;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border-top: 1px solid var(--main-color);
+    padding-top: 3rem;
     font-size: 0.9rem;
 }
+/* -------------------------------------------------------------------------------------------------------------------*/
+    @media (max-width: 768px) {
+        .footer_container {
+            display: flex;
+            flex-direction: column; /* Empilha os itens verticalmente */
+            align-items: center; /* Centraliza os itens horizontalmente */
+            justify-content: center; /* Alinha ao centro no eixo vertical */
+            max-width: none; /* Remove o limite de largura */
+        }
+    
+        .footer_container div {
+            min-width: auto; /* Remove a largura mínima para elementos flexíveis */
+            margin: 3rem 0; /* Dá espaçamento vertical entre os itens */
+            text-align: center; /* Centraliza o texto dentro dos itens */
+        }
+    
+        .footer_container h3 {
+            font-size: 3rem;
+            margin-bottom: 2rem; /* Ajuste o espaço abaixo do título */
+        }
+    
+        .footer_container p, 
+        .footer_container ul {
+            font-size: 2.5rem; /* Ajusta o tamanho da fonte se necessário */
+            line-height: 5rem; /* Ajusta o espaçamento entre linhas */
+            font-weight: 300;
+        }
+    
+        .footer_links ul {
+            padding: 0;
+            text-align: center; /* Centraliza a lista */
+        }
+    
+        .footer_links ul li {
+            margin-bottom: 1rem; /* Espaçamento entre os links */
+        }
+    
+        .footer_social .social_icons {
+            gap: 3rem; /* Reduz o espaçamento vertical entre os ícones */
+        }
+    
+        .footer_social .social_icons a i {
+            font-size: 4rem; /* Ajuste o tamanho do ícone para mobile */
+        }
+    
+        .footer_social .social_icons img {
+            width: 2rem; /* Ajuste o tamanho da imagem para mobile */
+            height: 2rem;
+        }
+    
+        .footer_bottom {
+            margin-top: 1rem; /* Diminui a margem superior */
+            padding-top: 5rem; /* Ajusta o preenchimento superior */
+            font-size: 2rem; /* Ajuste do tamanho da fonte */
+            text-align: center; /* Centraliza o texto no rodapé */
+        }
+    }
