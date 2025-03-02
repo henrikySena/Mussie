@@ -806,8 +806,8 @@ img-slide{
         height: 35rem;
         text-align: center;
         padding: 15px;
-        border: 0.15rem solid white;
-        border-radius: 25px;
+        border: 0.3rem solid white;
+        border-radius: 7rem;
         margin: 8rem;
         display: flex;
         align-items: center;
@@ -832,7 +832,7 @@ img-slide{
         margin-top: 2rem;
         text-align: center;
         padding: 15px;
-        border: 0.15rem solid white;
+        border: 0.3rem solid white;
         border-radius: 50px;
         display: flex;
         align-items: center;
